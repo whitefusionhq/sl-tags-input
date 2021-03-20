@@ -32,6 +32,11 @@ class SlTagsInput extends LitElement {
     this.tags = this.tags.concat(tagData)
     this.querySelector("sl-input").value = ""
     this.shadowRoot.querySelector("sl-dropdown").hide()
+
+    const tagsUpdateEvent = new CustomEvent("sl-tags-update", { detail: {
+      tags: this.tags
+    }})
+    this.dispatchEvent(tagsUpdateEvent)
   }
   
   connectedCallback() {
@@ -41,7 +46,7 @@ class SlTagsInput extends LitElement {
     }})
     this.dispatchEvent(inputEvent)
   }
-  
+
   handleKeyUp = (event) => {
     if (document.activeElement.localName == "sl-input") {
       if (event.key == "Enter") {
@@ -72,7 +77,11 @@ class SlTagsInput extends LitElement {
   
   handleTagClear = (event) => {
     this.tags = this.tags.filter(item => item.value != event.target.dataset.value)
-    this.requestUpdate()
+
+    const tagsUpdateEvent = new CustomEvent("sl-tags-update", { detail: {
+      tags: this.tags
+    }})
+    this.dispatchEvent(tagsUpdateEvent)
   }
   
   handleMenuSelect = (event) => {
