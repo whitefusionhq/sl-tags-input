@@ -20,12 +20,12 @@ class SlTagsInput extends LitElement {
       tags: { type: Array, reflect: true }
     }
   }
-  
+
   constructor() {
     super()
     this.tags = []
   }
-  
+
   addTag(tagData) {
     if (this.tags.find(item => item.value == tagData.value)) return
 
@@ -38,7 +38,7 @@ class SlTagsInput extends LitElement {
     }})
     this.dispatchEvent(tagsUpdateEvent)
   }
-  
+
   connectedCallback() {
     super.connectedCallback()
     const inputEvent = new CustomEvent("sl-tags-search-input", { detail: {
@@ -70,11 +70,11 @@ class SlTagsInput extends LitElement {
       if (event.key == "Enter") {
         const selectedItem = document.activeElement
         this.shadowRoot.querySelector("sl-dropdown").hide()
-        if (selectedItem?.localName == "sl-menu-item") this.addTag({label: selectedItem.textContent, value: selectedItem.value})
+        if (selectedItem && selectedItem.localName == "sl-menu-item") this.addTag({label: selectedItem.textContent, value: selectedItem.value})
       }
     }
   }
-  
+
   _handleTagClear(event) {
     this.tags = this.tags.filter(item => item.value != event.target.dataset.value)
 
@@ -83,12 +83,12 @@ class SlTagsInput extends LitElement {
     }})
     this.dispatchEvent(tagsUpdateEvent)
   }
-  
+
   _handleMenuSelect(event) {
     const selectedItem = event.detail.item
     this.addTag({label: selectedItem.textContent, value: selectedItem.value})
   }
-  
+
   _handleMenuHide(event) {
     this.querySelector("sl-input").setFocus()
   }
@@ -110,7 +110,7 @@ class SlTagsInput extends LitElement {
       </sl-dropdown>
     `;
   }
-  
+
   updateMenu(items) {
     if (items.length == 0) {
       items.push({placeholder: true, label: this.querySelector("[slot=menu]").getAttribute("placeholder") || "No results found"})
