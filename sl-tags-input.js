@@ -39,8 +39,7 @@ class SlTagsInput extends LitElement {
     this.dispatchEvent(tagsUpdateEvent)
   }
 
-  connectedCallback() {
-    super.connectedCallback()
+  firstUpdated() {
     const inputEvent = new CustomEvent("sl-tags-search-input", { detail: {
       value: this.querySelector("sl-input").value
     }})
