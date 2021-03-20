@@ -40,17 +40,16 @@ class SlTagsInput extends LitElement {
   }
 
   firstUpdated() {
-    const inputEvent = new CustomEvent("sl-tags-search-input", { detail: {
-      value: this.querySelector("sl-input").value
-    }})
-    this.dispatchEvent(inputEvent)
+    this.updateMenu([])
   }
 
   _handleKeyUp(event) {
     if (document.activeElement.localName == "sl-input") {
       if (event.key == "Enter") {
-        this.addTag({label: event.target.value, value: event.target.value})
-        event.target.value = ""
+        if (event.target.value.length > 0) {
+          this.addTag({label: event.target.value, value: event.target.value})
+          event.target.value = ""
+        }
       } else if (event.key == "ArrowDown") {
         this.shadowRoot.querySelector("sl-dropdown").show()
         this.querySelector("sl-menu-item").setFocus()
