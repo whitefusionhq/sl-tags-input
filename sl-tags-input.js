@@ -47,7 +47,7 @@ class SlTagsInput extends LitElement {
     this.dispatchEvent(inputEvent)
   }
 
-  handleKeyUp = (event) => {
+  _handleKeyUp(event) {
     if (document.activeElement.localName == "sl-input") {
       if (event.key == "Enter") {
         this.addTag({label: event.target.value, value: event.target.value})
@@ -75,7 +75,7 @@ class SlTagsInput extends LitElement {
     }
   }
   
-  handleTagClear = (event) => {
+  _handleTagClear(event) {
     this.tags = this.tags.filter(item => item.value != event.target.dataset.value)
 
     const tagsUpdateEvent = new CustomEvent("sl-tags-update", { detail: {
@@ -84,12 +84,12 @@ class SlTagsInput extends LitElement {
     this.dispatchEvent(tagsUpdateEvent)
   }
   
-  handleMenuSelect = (event) => {
+  _handleMenuSelect(event) {
     const selectedItem = event.detail.item
     this.addTag({label: selectedItem.textContent, value: selectedItem.value})
   }
   
-  handleMenuHide = (event) => {
+  _handleMenuHide(event) {
     this.querySelector("sl-input").setFocus()
   }
 
@@ -101,12 +101,12 @@ class SlTagsInput extends LitElement {
       </style>
       <div style="margin-bottom:var(--sl-spacing-medium)">
         ${repeat(this.tags, (tag) => tag.value, (tag, index) => html`
-          <sl-tag data-value="${tag.value}" clearable @sl-clear="${this.handleTagClear}">${tag.label}</sl-tag>
+          <sl-tag data-value="${tag.value}" clearable @sl-clear="${this._handleTagClear}">${tag.label}</sl-tag>
         `)}
       </div>
-      <slot name="input" @keyup="${this.handleKeyUp}"></slot>
-      <sl-dropdown @sl-after-hide="${this.handleMenuHide}" distance="-10">
-        <slot name="menu" @sl-select="${this.handleMenuSelect}"></slot>
+      <slot name="input" @keyup="${this._handleKeyUp}"></slot>
+      <sl-dropdown @sl-after-hide="${this._handleMenuHide}" distance="-10">
+        <slot name="menu" @sl-select="${this._handleMenuSelect}"></slot>
       </sl-dropdown>
     `;
   }
