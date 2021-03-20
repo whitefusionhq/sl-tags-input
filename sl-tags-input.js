@@ -40,7 +40,7 @@ class SlTagsInput extends LitElement {
   }
 
   firstUpdated() {
-    this.updateMenu([])
+    setTimeout(() => this.updateMenu([]), 0)
   }
 
   _handleKeyUp(event) {
