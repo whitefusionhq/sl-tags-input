@@ -1,0 +1,23 @@
+{
+  "name": "sl-tags-input",
+  "version": "0.1.0",
+  "description": "An autocomplete input featuring tags and dropdown components built with Shoelace",
+  "main": "sl-tags-input.js",
+  "module": "sl-tags-input.js",
+  "type": "module",
+  "repository": "https://github.com/whitefusionhq/sl-tags-input",
+  "author": "Jared White",
+  "license": "MIT",
+  "private": false,
+  "engines": {
+    "node": ">= 10.13.0"
+  },
+  "scripts": {
+  },
+  "files": [
+    "sl-tags-input.js"
+  ],
+  "dependencies": {
+    "lit-element": "^2.4.0"
+  }
+}
