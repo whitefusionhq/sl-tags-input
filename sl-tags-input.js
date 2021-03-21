@@ -2,18 +2,6 @@ import { LitElement, html } from "lit-element"
 import { render } from "lit-html"
 import { repeat } from "lit-html/directives/repeat.js"
 
-/*
-You'll need to make sure you've imported these Shoelace components:
-
-import SlDropdown from "@shoelace-style/shoelace/dist/components/dropdown/dropdown.js"
-import SlIcon from "@shoelace-style/shoelace/dist/components/icon/icon.js"
-import SlIconButton from "@shoelace-style/shoelace/dist/components/icon-button/icon-button.js"
-import SlInput from "@shoelace-style/shoelace/dist/components/input/input.js"
-import SlMenu from "@shoelace-style/shoelace/dist/components/menu/menu.js"
-import SlMenuItem from "@shoelace-style/shoelace/dist/components/menu-item/menu-item.js"
-import SlTag from "@shoelace-style/shoelace/dist/components/tag/tag.js"
-*/
-
 export default class SlTagsInput extends LitElement {
   static get properties() {
     return { 

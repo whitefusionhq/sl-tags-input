@@ -6,16 +6,18 @@ _under construction_
 
 **[DEMO on CodePen](https://codepen.io/jaredcwhite/pen/LYbmwgz)**
 
-Make sure you've imported all necessary components used by sl-tags-input:
+## Usage
+
+Make sure you've imported all necessary Shoelace components used by sl-tags-input:
 
 ```js
-import SlDropdown from "@shoelace-style/shoelace/dist/components/dropdown/dropdown.js"
-import SlIcon from "@shoelace-style/shoelace/dist/components/icon/icon.js"
-import SlIconButton from "@shoelace-style/shoelace/dist/components/icon-button/icon-button.js"
-import SlInput from "@shoelace-style/shoelace/dist/components/input/input.js"
-import SlMenu from "@shoelace-style/shoelace/dist/components/menu/menu.js"
-import SlMenuItem from "@shoelace-style/shoelace/dist/components/menu-item/menu-item.js"
-import SlTag from "@shoelace-style/shoelace/dist/components/tag/tag.js"
+import SlDropdown from "@shoelace-style/shoelace/dist/components/dropdown/dropdown"
+import SlIcon from "@shoelace-style/shoelace/dist/components/icon/icon"
+import SlIconButton from "@shoelace-style/shoelace/dist/components/icon-button/icon-button"
+import SlInput from "@shoelace-style/shoelace/dist/components/input/input"
+import SlMenu from "@shoelace-style/shoelace/dist/components/menu/menu"
+import SlMenuItem from "@shoelace-style/shoelace/dist/components/menu-item/menu-item"
+import SlTag from "@shoelace-style/shoelace/dist/components/tag/tag"
 ```
 
 Then import sl-tags-input:
