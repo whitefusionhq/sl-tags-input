@@ -14,7 +14,7 @@ import SlMenuItem from "@shoelace-style/shoelace/dist/components/menu-item/menu-
 import SlTag from "@shoelace-style/shoelace/dist/components/tag/tag.js"
 */
 
-class SlTagsInput extends LitElement {
+export default class SlTagsInput extends LitElement {
   static get properties() {
     return { 
       tags: { type: Array, reflect: true }
