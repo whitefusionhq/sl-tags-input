@@ -89,7 +89,11 @@ export default class SlTagsInput extends LitElement {
       </style>
       <div style="margin-bottom:var(--sl-spacing-medium)">
         ${repeat(this.tags, (tag) => tag.value, (tag, index) => html`
-          <sl-tag data-value="${tag.value}" clearable @sl-clear="${this._handleTagClear}">${tag.label}</sl-tag>
+          <sl-tag
+            exportparts="base: tag, content: tag-content, clear-button: tag-clear-button"
+            data-value="${tag.value}"
+            clearable
+            @sl-clear="${this._handleTagClear}">${tag.label}</sl-tag>
         `)}
       </div>
       <slot name="input" @keyup="${this._handleKeyUp}"></slot>
