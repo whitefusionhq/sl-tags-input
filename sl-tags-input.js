@@ -5,19 +5,21 @@ import { repeat } from "lit-html/directives/repeat.js"
 export default class SlTagsInput extends LitElement {
   static get properties() {
     return { 
-      tags: { type: Array, reflect: true }
+      tags: { type: Array, reflect: true },
+      single: { type: Boolean }
     }
   }
 
   constructor() {
     super()
     this.tags = []
+    this.single = false
   }
 
   addTag(tagData) {
     if (this.tags.find(item => item.value == tagData.value)) return
 
-    this.tags = this.tags.concat(tagData)
+    this.single ? this.tags = [tagData] : this.tags = this.tags.concat(tagData)
     this.querySelector("sl-input").value = ""
     this.shadowRoot.querySelector("sl-dropdown").hide()
 
