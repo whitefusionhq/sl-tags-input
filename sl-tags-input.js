@@ -41,7 +41,7 @@ export default class SlTagsInput extends LitElement {
         }
       } else if (event.key == "ArrowDown") {
         this.shadowRoot.querySelector("sl-dropdown").show()
-        this.querySelector("sl-menu-item").setFocus()
+        this.querySelector("sl-menu-item").focus()
       } else if (event.target.value.length > 1) {
         clearTimeout(this.inputTimeout)
         this.inputTimeout = setTimeout(() => {
@@ -77,7 +77,7 @@ export default class SlTagsInput extends LitElement {
   }
 
   _handleMenuHide(event) {
-    this.querySelector("sl-input").setFocus()
+    this.querySelector("sl-input").focus()
   }
 
   render() {
@@ -89,10 +89,11 @@ export default class SlTagsInput extends LitElement {
       <div style="margin-bottom:var(--sl-spacing-medium)">
         ${repeat(this.tags, (tag) => tag.value, (tag, index) => html`
           <sl-tag
+            type="primary"
             exportparts="base: tag, content: tag-content, clear-button: tag-clear-button"
             data-value="${tag.value}"
-            clearable
-            @sl-clear="${this._handleTagClear}">${tag.label}</sl-tag>
+            removable
+            @sl-remove="${this._handleTagClear}">${tag.label}</sl-tag>
         `)}
       </div>
       <slot name="input" @keyup="${this._handleKeyUp}"></slot>

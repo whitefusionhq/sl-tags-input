@@ -1,6 +1,6 @@
 {
   "name": "sl-tags-input",
-  "version": "0.10.0",
+  "version": "0.11.0",
   "description": "An autocomplete input featuring tags and dropdown components built with Shoelace",
   "main": "sl-tags-input.js",
   "module": "sl-tags-input.js",
@@ -18,6 +18,6 @@
     "sl-tags-input.js"
   ],
   "dependencies": {
-    "lit": "^2.0.0-rc.2"
+    "lit": "^2.0.0"
   }
 }
