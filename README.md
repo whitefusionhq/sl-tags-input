@@ -11,19 +11,19 @@ _under construction_
 Make sure you've imported all necessary Shoelace components used by sl-tags-input:
 
 ```js
-import SlDropdown from "@shoelace-style/shoelace/dist/components/dropdown/dropdown"
-import SlIcon from "@shoelace-style/shoelace/dist/components/icon/icon"
-import SlIconButton from "@shoelace-style/shoelace/dist/components/icon-button/icon-button"
-import SlInput from "@shoelace-style/shoelace/dist/components/input/input"
-import SlMenu from "@shoelace-style/shoelace/dist/components/menu/menu"
-import SlMenuItem from "@shoelace-style/shoelace/dist/components/menu-item/menu-item"
-import SlTag from "@shoelace-style/shoelace/dist/components/tag/tag"
+import "@shoelace-style/shoelace/dist/components/dropdown/dropdown"
+import "@shoelace-style/shoelace/dist/components/icon/icon"
+import "@shoelace-style/shoelace/dist/components/icon-button/icon-button"
+import "@shoelace-style/shoelace/dist/components/input/input"
+import "@shoelace-style/shoelace/dist/components/menu/menu"
+import "@shoelace-style/shoelace/dist/components/menu-item/menu-item"
+import "@shoelace-style/shoelace/dist/components/tag/tag"
 ```
 
 Then import sl-tags-input:
 
 ```js
-import SlTagsInput from "sl-tags-input"
+import "sl-tags-input"
 ```
 
 In your HTML, add the component marktup with its necessary slot dependencies:
