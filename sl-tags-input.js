@@ -41,7 +41,9 @@ export default class SlTagsInput extends LitElement {
         }
       } else if (event.key == "ArrowDown") {
         this.shadowRoot.querySelector("sl-dropdown").show()
-        this.querySelector("sl-menu-item").focus()
+        const firstMenuItem = this.querySelector("sl-menu-item")
+        this.querySelector("[slot=menu]").setCurrentItem(firstMenuItem)
+        firstMenuItem.focus()
       } else if (event.target.value.length > 1) {
         clearTimeout(this.inputTimeout)
         this.inputTimeout = setTimeout(() => {
